@@ -1,0 +1,27 @@
+﻿using System;
+using BHD.Logger.Models;
+using BHD.Logger.Services;
+using Microsoft.AspNetCore.Mvc;
+
+namespace BHD.Logger.Controllers
+{
+	[Route("api/{controller}/{action}")]
+	[ApiController]
+	public class LogsController : ControllerBase
+	{
+		LoggerService _loggerService;
+
+		public LogsController(LoggerService loggerService)
+		{
+			this._loggerService = loggerService;
+		}
+
+		[ActionName("GetAllLogs")]
+		[HttpGet]
+        public IActionResult GetAllLogs()
+        {
+            return Ok(_loggerService.GetAllLogs());
+        }
+    }
+}
+
