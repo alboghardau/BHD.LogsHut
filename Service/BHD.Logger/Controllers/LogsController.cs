@@ -22,6 +22,13 @@ namespace BHD.Logger.Controllers
         {
             return Ok(_loggerService.GetAllLogs());
         }
+
+		[ActionName("GetLogsCounter")]
+		[HttpGet]
+		public IActionResult GetLogsCounter()
+		{
+			return Ok(_loggerService.GetLogsNumber());
+		}
     }
 }
 

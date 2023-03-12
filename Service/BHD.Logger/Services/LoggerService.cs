@@ -26,6 +26,11 @@ namespace BHD.Logger.Services
 		{
 			return this.Logs;
 		}
+
+		public long GetLogsNumber()
+		{
+			return this.Logs.Count();
+		}
 	}
 }
 
