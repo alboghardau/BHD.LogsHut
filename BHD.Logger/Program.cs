@@ -1,4 +1,6 @@
-﻿using BHD.Logger.Services;
+﻿using BHD.Logger.Interfaces;
+using BHD.Logger.Mock;
+using BHD.Logger.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddSingleton<LoggerService>();
+builder.Services.AddTransient<IMockService, MockService>();
+builder.Services.AddTransient<ILogGenerator, LogGenerator>();
 
 var app = builder.Build();
 

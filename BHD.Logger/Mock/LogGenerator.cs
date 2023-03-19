@@ -14,16 +14,6 @@ namespace BHD.Logger.Mock
             this.random = new Random();
         }
 
-        public void Start()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Stop()
-        {
-            throw new NotImplementedException();
-        }
-
         public Log GetRandomLog()
         {
             var log = new Log();

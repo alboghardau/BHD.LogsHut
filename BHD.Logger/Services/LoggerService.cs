@@ -1,20 +1,21 @@
 ﻿using System;
+using System.Collections.Concurrent;
 using BHD.Logger.Models;
 
 namespace BHD.Logger.Services
 {
 	public class LoggerService
     {
-        private List<Log> Logs;
+        private ConcurrentQueue<Log> Logs;
 
         public LoggerService()
 		{
-			this.Logs = new List<Log>();
+			this.Logs = new ConcurrentQueue<Log>();
 		}
 
 		public void AddLog(Log singleLog)
 		{
-			this.Logs.Add(singleLog);
+			this.Logs.Enqueue(singleLog);
 		}
 
 		public void ClearLogs()
@@ -24,7 +25,7 @@ namespace BHD.Logger.Services
 
 		public List<Log> GetAllLogs()
 		{
-			return this.Logs;
+			return this.Logs.ToList<Log>();
 		}
 
 		public long GetLogsNumber()
