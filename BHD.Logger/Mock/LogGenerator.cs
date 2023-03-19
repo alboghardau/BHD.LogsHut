@@ -3,7 +3,7 @@ using BHD.Logger.Interfaces;
 using BHD.Logger.Models;
 using BHD.Logger.Utils;
 
-namespace BHD.Logger.Services
+namespace BHD.Logger.Mock
 {
     public class LogGenerator : ILogGenerator
     {
@@ -24,7 +24,7 @@ namespace BHD.Logger.Services
             throw new NotImplementedException();
         }
 
-        private Log GetRandomLog()
+        public Log GetRandomLog()
         {
             var log = new Log();
 
@@ -33,6 +33,7 @@ namespace BHD.Logger.Services
             log.Service = this.GetRandomService();
             log.Message = this.GetRandomMessage();
             log.IpAdress = this.GetRandomIP();
+            log.User = this.GetRandomUser();
 
             return log;
         }
@@ -41,7 +42,6 @@ namespace BHD.Logger.Services
         {
             return EnumUtils.GetRandomEnumElement<LogLevel>();
         }
-
 
         private string GetRandomService()
         {
@@ -75,7 +75,12 @@ namespace BHD.Logger.Services
             return ArrayUtils.GetRandomElement<string>(ipAdresses);
         }
 
+        private string GetRandomUser()
+        {
+            var users = new[] { "Dorel234" , "Gogu4242", "Mike4321", "Lisa34234"};
 
+            return ArrayUtils.GetRandomElement<string>(users);
+        }
     }
 }
 

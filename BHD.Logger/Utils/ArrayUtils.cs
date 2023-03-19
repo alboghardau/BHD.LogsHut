@@ -6,9 +6,9 @@ namespace BHD.Logger.Utils
 		/// <summary>
 		/// Gets random element from array
 		/// </summary>
-		/// <typeparam name="T">T</typeparam>
+		/// <typeparam name="T">Obj Type</typeparam>
 		/// <param name="array">Array</param>
-		/// <returns>T</returns>
+		/// <returns>Single Obj</returns>
 		public static T GetRandomElement<T>(T[] array)
 		{
 			var random = new Random();

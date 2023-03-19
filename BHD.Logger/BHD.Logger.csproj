@@ -12,6 +12,7 @@
     <None Remove="Controllers\" />
     <None Remove="Interfaces\" />
     <None Remove="Utils\" />
+    <None Remove="Mock\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -19,5 +20,6 @@
     <Folder Include="Controllers\" />
     <Folder Include="Interfaces\" />
     <Folder Include="Utils\" />
+    <Folder Include="Mock\" />
   </ItemGroup>
 </Project>

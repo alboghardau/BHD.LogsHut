@@ -3,7 +3,6 @@ namespace BHD.Logger.Models
 {
 	public class Log
 	{
-
 		public DateTime Time { get; set; }
 		public LogLevel LogLevel { get; set; }
 		public String Service { get; set; }
@@ -12,11 +11,6 @@ namespace BHD.Logger.Models
 		public String IpAdress { get; set; }
 		public String User { get; set; }
 		public String CallStack { get; set; }
-
-
-		public Log()
-		{
-		}
 	}
 }
 
