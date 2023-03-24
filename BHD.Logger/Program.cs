@@ -1,16 +1,14 @@
 ﻿using BHD.Logger.Interfaces;
 using BHD.Logger.Mock;
 using BHD.Logger.Services;
+using BHD.Logger.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 
-builder.Services.AddSingleton<LoggerService>();
-builder.Services.AddTransient<IMockService, MockService>();
-builder.Services.AddTransient<ILogGenerator, LogGenerator>();
+ServiceUtils.RegisterServices(builder);
 
 var app = builder.Build();
 

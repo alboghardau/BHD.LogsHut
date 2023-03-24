@@ -6,9 +6,10 @@ namespace BHD.Logger.Services
 {
 	public class MockService : IMockService
 	{
-		ILogGenerator logGenerator;
-        LoggerService loggerService;
-        Thread mockThread;
+		private ILogGenerator logGenerator;
+        private LoggerService loggerService;
+        private Thread mockThread;
+        private bool stopRequested = false;
 
 		public MockService(LogGenerator logGenerator, LoggerService loggerService)
 		{
@@ -18,18 +19,27 @@ namespace BHD.Logger.Services
 
         public void Start()
         {
-            throw new NotImplementedException();
+            this.stopRequested = false;
+            this.mockThread = new Thread(GenerateLog);
+            this.mockThread.Start();
         }
 
         public void Stop()
         {
-            throw new NotImplementedException();
+            stopRequested = true;
+            this.mockThread.Join();
         }
 
         private void GenerateLog()
         {
-            var log = this.logGenerator.GetRandomLog();
-            this.loggerService.AddLog(log);
+            while (!stopRequested)
+            {
+                var log = this.logGenerator.GetRandomLog();
+                this.loggerService.AddLog(log);
+
+                //TO DO configurable
+                Thread.Sleep(1000);
+            }
         }
     }
 }
