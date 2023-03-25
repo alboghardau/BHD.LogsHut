@@ -22,6 +22,4 @@ app.MapControllers();
 
 app.Run();
 
-//var mockService = new MockService(new LogGenerator(), new LoggerService());
 
-//mockService.Start();

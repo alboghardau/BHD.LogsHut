@@ -13,6 +13,16 @@ namespace BHD.Logger.Models
 		public String IpAdress { get; set; }
 		public String User { get; set; }
 		public String CallStack { get; set; }
-	}
+
+        public string GetFormatedShort()
+        {
+            return String.Format("### {0} ###" +
+                " {1} |" +
+                " {2} |" ,
+				this.Time.ToLocalTime(),
+				this.Service,
+				this.Message);
+        }
+    }
 }
 

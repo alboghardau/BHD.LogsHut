@@ -8,6 +8,11 @@ namespace BHD.Logger.Mock
 {
     public class LogGenerator : ILogGenerator
     {
+        public LogGenerator()
+        {
+
+        }
+
         public Log GetRandomLog()
         {
             var log = new Log();

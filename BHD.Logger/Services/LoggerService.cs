@@ -6,31 +6,35 @@ namespace BHD.Logger.Services
 {
 	public class LoggerService
     {
-        private ConcurrentQueue<Log> Logs;
+        private ConcurrentQueue<Log> logs;
 
-        public LoggerService()
+		private WriterService writerService;
+
+        public LoggerService(WriterService writerService)
 		{
-			this.Logs = new ConcurrentQueue<Log>();
+			this.logs = new ConcurrentQueue<Log>();
+			this.writerService = writerService;
 		}
 
 		public void AddLog(Log singleLog)
 		{
-			this.Logs.Enqueue(singleLog);
+			this.logs.Enqueue(singleLog);
+			this.writerService.Write(singleLog);
 		}
 
 		public void ClearLogs()
 		{
-			this.Logs.Clear();
+			this.logs.Clear();
 		}
 
 		public List<Log> GetAllLogs()
 		{
-			return this.Logs.ToList<Log>();
+			return this.logs.ToList<Log>();
 		}
 
 		public long GetLogsNumber()
 		{
-			return this.Logs.Count();
+			return this.logs.Count();
 		}
 	}
 }

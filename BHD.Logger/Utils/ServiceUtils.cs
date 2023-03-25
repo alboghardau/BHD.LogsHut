@@ -12,11 +12,12 @@ namespace BHD.Logger.Utils
 		{
 			//Singletons
 			builder.Services.AddSingleton<LoggerService>();
-			
+			builder.Services.AddSingleton<WriterService>();
 
-			//Transient
-            builder.Services.AddTransient<IMockService, MockService>();
+            //Transient
             builder.Services.AddTransient<ILogGenerator, LogGenerator>();
+            builder.Services.AddTransient<IMockService, MockService>();
+
 			builder.Services.AddTransient<ILogWriter, ConsoleWriter>();
         }
 	}

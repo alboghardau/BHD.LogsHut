@@ -11,7 +11,7 @@ namespace BHD.Logger.Services
         private Thread? mockThread;
         private bool stopRequested = false;
 
-		public MockService(LogGenerator logGenerator, LoggerService loggerService)
+		public MockService(ILogGenerator logGenerator, LoggerService loggerService)
 		{
 			this.logGenerator = logGenerator;
             this.loggerService = loggerService;

@@ -11,7 +11,7 @@ namespace BHD.Logger.Utils.Writers
         public void WriteLog(Log log)
         {
             Console.ForegroundColor = GetColor(log);
-            Console.WriteLine(log.Message);
+            Console.WriteLine(log.GetFormatedShort());
             Console.ResetColor();
         }
 

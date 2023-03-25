@@ -10,7 +10,7 @@ namespace BHD.Logger.Services
 		//Writers
 		private ILogWriter consoleWriter;
 
-		public WriterService(ConsoleWriter consoleWriter)
+		public WriterService(ILogWriter consoleWriter)
 		{
 			this.consoleWriter = consoleWriter;
 		}
