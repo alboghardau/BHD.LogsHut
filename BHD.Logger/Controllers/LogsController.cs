@@ -9,25 +9,25 @@ namespace BHD.Logger.Controllers
 	[ApiController]
 	public class LogsController : ControllerBase
 	{
-		LoggerService _loggerService;
+		LoggerService loggerService;
 
 		public LogsController(LoggerService loggerService)
 		{
-			this._loggerService = loggerService;
+			this.loggerService = loggerService;
 		}
 
 		[ActionName("GetAllLogs")]
 		[HttpGet]
         public IActionResult GetAllLogs()
         {
-            return Ok(_loggerService.GetAllLogs());
+            return Ok(loggerService.GetAllLogs());
         }
 
 		[ActionName("GetLogsCounter")]
 		[HttpGet]
 		public IActionResult GetLogsCounter()
 		{
-			return Ok(_loggerService.GetLogsNumber());
+			return Ok(loggerService.GetLogsNumber());
 		}
     }
 }

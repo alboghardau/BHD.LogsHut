@@ -1,11 +1,12 @@
 ﻿using System;
+using BHD.Logger.Enums;
+
 namespace BHD.Logger.Models
 {
 	public class Log
 	{
-
 		public DateTime Time { get; set; }
-		public LogLevel LogLevel { get; set; }
+		public LogLevels LogLevel { get; set; }
 		public String Service { get; set; }
 		public String Message { get; set; }
 		public String MethodName { get; set; }
@@ -13,10 +14,15 @@ namespace BHD.Logger.Models
 		public String User { get; set; }
 		public String CallStack { get; set; }
 
-
-		public Log()
-		{
-		}
-	}
+        public string GetFormatedShort()
+        {
+            return String.Format("### {0} ###" +
+                " {1} |" +
+                " {2} |" ,
+				this.Time.ToLocalTime(),
+				this.Service,
+				this.Message);
+        }
+    }
 }
 
