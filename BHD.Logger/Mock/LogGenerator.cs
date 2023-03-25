@@ -1,4 +1,5 @@
 ﻿using System;
+using BHD.Logger.Enums;
 using BHD.Logger.Interfaces;
 using BHD.Logger.Models;
 using BHD.Logger.Utils;
@@ -7,13 +8,6 @@ namespace BHD.Logger.Mock
 {
     public class LogGenerator : ILogGenerator
     {
-        Random random;
-
-        public LogGenerator()
-        {
-            this.random = new Random();
-        }
-
         public Log GetRandomLog()
         {
             var log = new Log();
@@ -28,9 +22,9 @@ namespace BHD.Logger.Mock
             return log;
         }
 
-        private LogLevel GetRandomLogLevel()
+        private LogLevels GetRandomLogLevel()
         {
-            return EnumUtils.GetRandomEnumElement<LogLevel>();
+            return EnumUtils.GetRandomEnumElement<LogLevels>();
         }
 
         private string GetRandomService()

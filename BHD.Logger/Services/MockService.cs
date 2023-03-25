@@ -8,7 +8,7 @@ namespace BHD.Logger.Services
 	{
 		private ILogGenerator logGenerator;
         private LoggerService loggerService;
-        private Thread mockThread;
+        private Thread? mockThread;
         private bool stopRequested = false;
 
 		public MockService(LogGenerator logGenerator, LoggerService loggerService)
@@ -26,8 +26,11 @@ namespace BHD.Logger.Services
 
         public void Stop()
         {
-            stopRequested = true;
-            this.mockThread.Join();
+            if (this.mockThread != null)
+            {
+                stopRequested = true;
+                this.mockThread.Join();
+            }
         }
 
         private void GenerateLog()
