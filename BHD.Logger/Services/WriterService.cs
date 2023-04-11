@@ -2,6 +2,7 @@
 using BHD.Logger.Interfaces;
 using BHD.Logger.Models;
 using BHD.Logger.Utils.Writers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BHD.Logger.Services
 {
