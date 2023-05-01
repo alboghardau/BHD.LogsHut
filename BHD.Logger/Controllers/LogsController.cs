@@ -29,6 +29,18 @@ namespace BHD.Logger.Controllers
 		{
 			return Ok(loggerService.GetLogsNumber());
 		}
+
+        [ActionName("test")]
+        [HttpPost]
+		public IActionResult Test([FromBody]string text)
+		{
+            if (text == null)
+            {
+                return BadRequest("Invalid payload format.");
+            }
+            // code to handle the received string goes here
+            return Ok(text);
+        }
     }
 }
 
