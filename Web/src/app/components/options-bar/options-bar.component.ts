@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MockService } from 'src/app/services/mock.service';
 
 @Component({
   selector: 'options-bar',
@@ -6,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./options-bar.component.scss'],
 })
 export class OptionsBarComponent implements OnInit {
-  constructor() {}
+  private mockService;
+
+  constructor(mockService: MockService) {
+    this.mockService = mockService;
+  }
 
   ngOnInit(): void {}
+
+  public startMock() {
+    this.mockService.startMock();
+  }
+
+  public stopMock() {
+    this.mockService.stopMock();
+  }
 }
