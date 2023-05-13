@@ -9,8 +9,10 @@ import { LogsTableComponent } from "./components/logs-table/logs-table.component
 import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { ConfigurationService } from "./services/configuration.service";
 
-export function initConfiguration(service: ConfigurationService): Function {
-    return () => service.load();
+export function initConfiguration(service: ConfigurationService) {
+    return (): Promise<any> => {
+        return service.loadConfig();
+    };
 }
 @NgModule({
     declarations: [AppComponent, OptionsBarComponent, LogsTableComponent],

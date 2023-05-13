@@ -9,11 +9,17 @@ export class ConfigurationService {
 
     constructor(private http: HttpClient) {}
 
-    load() {
-        this.http.get("app.config.json").subscribe((response) => {
-            this.config = response;
-            console.log("Config Service: Loaded config");
-        });
+    loadConfig(): Promise<any> {
+        return this.http
+            .get("app.config.json")
+            .toPromise()
+            .then((data) => {
+                this.config = data;
+                console.log("Configuration loaded");
+            })
+            .catch((error) => {
+                console.error("Failed to load configuration", error);
+            });
     }
 
     get baseUrl(): string {
