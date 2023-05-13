@@ -1,23 +1,23 @@
-import { Injectable } from '@angular/core';
-import { Log } from '../models/Log';
+import { Injectable } from "@angular/core";
+import { Log } from "../models/log";
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: "root",
 })
 export class LogsService {
-  private logs: Log[] = [];
+    private logs: Log[] = [];
 
-  constructor() {}
+    constructor() {}
 
-  public getAllLogs(): Log[] {
-    return this.logs;
-  }
+    public getAllLogs(): Log[] {
+        return this.logs;
+    }
 
-  public addLog(log: Log): void {
-    this.logs.push(log);
-  }
+    public addLog(log: Log): void {
+        this.logs.push(log);
+    }
 
-  public clearLogs(): void {
-    this.logs = [];
-  }
+    public clearLogs(): void {
+        this.logs = [];
+    }
 }
