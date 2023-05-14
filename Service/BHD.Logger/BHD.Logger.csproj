@@ -15,6 +15,7 @@
     <None Remove="Mock\" />
     <None Remove="Enums\" />
     <None Remove="Utils\Writers\" />
+    <None Remove="DTOs\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\" />
@@ -25,5 +26,6 @@
     <Folder Include="Mock\" />
     <Folder Include="Enums\" />
     <Folder Include="Utils\Writers\" />
+    <Folder Include="DTOs\" />
   </ItemGroup>
 </Project>
