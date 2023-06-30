@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { OptionsBarComponent } from "./options-bar.component";
+import { LogsTableComponent } from "./logs-table.component";
 
-describe("OptionsBarComponent", () => {
-    let component: OptionsBarComponent;
-    let fixture: ComponentFixture<OptionsBarComponent>;
+describe("LogsTableComponent", () => {
+    let component: LogsTableComponent;
+    let fixture: ComponentFixture<LogsTableComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [OptionsBarComponent],
+            declarations: [LogsTableComponent],
         }).compileComponents();
 
-        fixture = TestBed.createComponent(OptionsBarComponent);
+        fixture = TestBed.createComponent(LogsTableComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

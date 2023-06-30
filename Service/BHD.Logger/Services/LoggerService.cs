@@ -6,35 +6,41 @@ namespace BHD.Logger.Services
 {
 	public class LoggerService
     {
-        private ConcurrentQueue<Log> logs;
+        private ConcurrentQueue<Log> _logs;
 
-		private WriterService writerService;
+		private WriterService _writerService;
 
         public LoggerService(WriterService writerService)
 		{
-			this.logs = new ConcurrentQueue<Log>();
-			this.writerService = writerService;
+			_logs = new ConcurrentQueue<Log>();
+			_writerService = writerService;
 		}
 
 		public void AddLog(Log singleLog)
 		{
-			this.logs.Enqueue(singleLog);
-			this.writerService.Write(singleLog);
+			_logs.Enqueue(singleLog);
+			_writerService.Write(singleLog);
 		}
 
 		public void ClearLogs()
 		{
-			this.logs.Clear();
+			_logs.Clear();
 		}
 
 		public List<Log> GetAllLogs()
 		{
-			return this.logs.ToList<Log>();
+			return _logs.ToList<Log>();
 		}
 
 		public long GetLogsNumber()
 		{
-			return this.logs.Count();
+			return _logs.Count();
+		}
+
+		public List<Log> GetLogsAfterTime(DateTime time)
+		{
+			List<Log> timeFilteredLogs = _logs.Where(log => log.Time > time).ToList();
+			return timeFilteredLogs;
 		}
 	}
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BHD.Logger", "BHD.Logger\BH
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BHD.Logger.Common", "BHD.Logger.Common\BHD.Logger.Common.csproj", "{217D73D1-5B90-4DBD-BBD4-7E76FBB1E054}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BHD.Logger.Tests", "BHD.Logger.Tests\BHD.Logger.Tests.csproj", "{02D7C907-5B05-4B3A-81B5-2DDE0C083093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{217D73D1-5B90-4DBD-BBD4-7E76FBB1E054}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{217D73D1-5B90-4DBD-BBD4-7E76FBB1E054}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{217D73D1-5B90-4DBD-BBD4-7E76FBB1E054}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D7C907-5B05-4B3A-81B5-2DDE0C083093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D7C907-5B05-4B3A-81B5-2DDE0C083093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D7C907-5B05-4B3A-81B5-2DDE0C083093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D7C907-5B05-4B3A-81B5-2DDE0C083093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

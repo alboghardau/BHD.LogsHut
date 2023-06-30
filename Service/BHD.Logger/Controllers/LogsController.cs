@@ -1,4 +1,5 @@
 ﻿using System;
+using BHD.Logger.DTOs;
 using BHD.Logger.Models;
 using BHD.Logger.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -9,25 +10,32 @@ namespace BHD.Logger.Controllers
 	[ApiController]
 	public class LogsController : ControllerBase
 	{
-		LoggerService loggerService;
+		LoggerService _loggerService;
 
 		public LogsController(LoggerService loggerService)
 		{
-			this.loggerService = loggerService;
+			_loggerService = loggerService;
 		}
 
 		[ActionName("GetAllLogs")]
 		[HttpGet]
         public IActionResult GetAllLogs()
         {
-            return Ok(loggerService.GetAllLogs());
+            return Ok(_loggerService.GetAllLogs());
         }
 
 		[ActionName("GetLogsCounter")]
 		[HttpGet]
 		public IActionResult GetLogsCounter()
 		{
-			return Ok(loggerService.GetLogsNumber());
+			return Ok(_loggerService.GetLogsNumber());
+		}
+
+		[ActionName("GetNewLogs")]
+		[HttpPost]
+		public IActionResult GetNewLogs([FromBody] NewLogsRequestDto newLogsRequest)
+		{
+			return Ok(_loggerService.GetLogsAfterTime(newLogsRequest.Time));
 		}
     }
 }
