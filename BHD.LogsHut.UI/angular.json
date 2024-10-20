@@ -29,7 +29,7 @@
               "src/app.config.json"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles-light.scss"
             ],
             "scripts": []
           },
@@ -97,7 +97,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/styles-light.scss"
             ],
             "scripts": []
           }

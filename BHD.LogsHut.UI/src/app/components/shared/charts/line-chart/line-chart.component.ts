@@ -36,6 +36,7 @@ export class LineChartComponent implements OnChanges{
             };
 
         this.chartOptions = {
+            animation: false,
             responsive: true,
             maintainAspectRatio: false,
             plugins: {
