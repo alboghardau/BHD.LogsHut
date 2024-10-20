@@ -7,7 +7,7 @@ import { TransferService } from "src/app/services/transfer.service";
     selector: "app-topbar",
     templateUrl: "./app.topbar.component.html",
 })
-export class AppTopBarComponent implements AfterViewInit {
+export class AppTopBarComponent {
     items!: MenuItem[];
     isScreenSmall: boolean = false;
 
@@ -19,19 +19,4 @@ export class AppTopBarComponent implements AfterViewInit {
         public layoutService: LayoutService,
         public transferService: TransferService
     ) { }
-
-    ngAfterViewInit() {
-        // Initialize the screen size check after view is initialized
-        this.checkScreenSize();
-    }
-
-    @HostListener('window:resize', ['$event'])
-    onResize(event: Event) {
-        // Update the boolean when the window is resized
-        this.checkScreenSize();
-    }
-
-    checkScreenSize() {
-        this.isScreenSmall = window.innerWidth < 990;
-    }
 }

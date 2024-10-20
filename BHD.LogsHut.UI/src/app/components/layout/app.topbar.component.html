@@ -6,12 +6,12 @@
 
     <button class="btn top" routerLink="/dashboard">
         <i class="btn icon pi pi-desktop"></i>
-        <div *ngIf="!isScreenSmall" class="font-bold">Dashboard</div>
+        <div *ngIf="layoutService.isDesktop()" class="font-bold">Dashboard</div>
     </button>
 
     <button class="btn top" routerLink="/">
         <i class="btn icon pi pi-eye"></i>
-        <span *ngIf="!isScreenSmall" class="font-bold">Live View</span>
+        <span *ngIf="layoutService.isDesktop()" class="font-bold">Live View</span>
     </button>
 
     <!-- <button class="p-link layout-topbar-button">
